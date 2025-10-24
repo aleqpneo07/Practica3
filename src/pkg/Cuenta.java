@@ -16,17 +16,23 @@ public class Cuenta {
     	this.saldo=0;
     }
 
-	public void ingresar(double x) {
-    	this.saldo=100.0;
+    public void ingresar(double x) {
+        Movimiento m = new Movimiento("Ingreso", x);
+        mMovimientos.add(m);
+        saldo += x;
     }
 
     public void retirar(double x) {
-    	this.saldo=150.0;
-
+        Movimiento m = new Movimiento("Retirada", -x);
+        mMovimientos.add(m);
+        saldo -= x;
     }
 
 	public double getSaldo() {
 		return this.saldo;
+	}
+	 public List<Movimiento> getMovimientos() {
+	        return mMovimientos;
 	}
 }
 
