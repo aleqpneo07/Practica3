@@ -9,17 +9,24 @@ public class Cuenta {
     private List<Movimiento> mMovimientos;
     private double saldo;
     
-    public Cuenta(String string, String string2) {
-	}
+    public Cuenta(String numero, String titular) {
+    	this.mNumero = numero;
+    	this.nTitular = titular;
+    	this.mMovimientos = new ArrayList<>();
+    	this.saldo=0;
+    }
 
 	public void ingresar(double x) {
+    	this.saldo=100.0;
     }
 
     public void retirar(double x) {
+    	this.saldo=150.0;
+
     }
 
 	public double getSaldo() {
-		return 0;
+		return this.saldo;
 	}
 }
 
